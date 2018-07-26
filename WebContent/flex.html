@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!--  위치 지정을 사용하지 않고도 유연한 응답 레이아웃 구조를보다 쉽게 ​​설계 할 수 있습니다-->
+<title>Flex</title>
+</head>
+<body>
+	<p> mt: margin-top의 줄인말
+	 p-1~5까지 : p태그처럼 크기 조절 할수 있음 숫자가 늘어날수록 더 커짐 
+	 즉 flex로 자식 요소의 크기들을 조절할수 있다 p를 이용해서  </p>
+<div class="container">
+	<div class="d-flex p-5 bg-secondary text-white">
+		<div class="p-2 bg-info">info</div>
+		<div class="p-3 bg-warning">info</div>
+		<div class="p-4 bg-primary">info</div>
+	</div><br>
+	<p>inline요소를 추가하면 컨테이너 자식요소에 맞추서 컨테이너 크기가 조절된다.</p>
+	<div class="d-inline-flex p-1 bg-secondary text-white">
+		<div class="p-2 bg-info">info</div>
+		<div class="p-3 bg-warning">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>
+		<div class="p-4 bg-primary">info</div>	
+	</div>	<br>
+
+	<p> 플렉스  row(행)항목을 나란히~ </p>
+	<div class="d-flex  flex-row mt-3 bg-secondary">
+		<div class="p-2 bg-info">info</div>
+		<div class="p-2 bg-warning">info</div>
+		<div class="p-2 bg-primary">info</div>
+	</div>
+	<p> reverse를 사용하면 자식요소들이 오른쪽 정렬되고 자식요소도 젤 아래있는게 첫번째로 가게됨 즉 default에서 반전됨   </p>
+	<div class="d-flex flex-row-reverse mt-3 bg-secondary">
+		<div class="p-2 bg-info">info</div>
+		<div class="p-2 bg-warning">info</div>
+		<div class="p-2 bg-primary">info</div>
+	</div>
+	<p> d-flex이용해서 자식요소 위치 변경 방법  </p>
+	<p> mb:margin-bottom </p>
+	<p> 1. 기본적인 방법 start를 보면 왼쪽부터 시작하는걸 알수 있음  </p>
+	<div class="d-flex mt-3 justify-content-start bg-secondary mb-3">
+		<div class="p-2 bg-info">Flex item 1</div>
+   		<div class="p-2 bg-warning">Flex item 2</div>
+		<div class="p-2 bg-primary">Flex item 3</div>
+	</div>
+	<p> 2. end를 보면 알듯이 오른쪽으로 부터 정렬됨  </p>
+	<div class="d-flex mt-3 justify-content-end bg-secondary mb-3">
+		<div class="p-2 bg-info">Flex item 1</div>
+   		<div class="p-2 bg-warning">Flex item 2</div>
+		<div class="p-2 bg-primary">Flex item 3</div>
+	</div>
+	<p> 3. center를 보면 알수 있듯이 요소들이 가운데로 몰림  </p>
+	<div class="d-flex mt-3 justify-content-center bg-secondary mb-3">
+		<div class="p-2 bg-info">Flex item 1</div>
+   		<div class="p-2 bg-warning">Flex item 2</div>
+		<div class="p-2 bg-primary">Flex item 3</div>
+	</div>
+	<p> 4. between 알아서 규격에 맞춰서 정렬됨  </p>
+	<div class="d-flex mt-3 justify-content-between bg-secondary mb-3">
+		<div class="p-2 bg-info">Flex item 1</div>
+		<div class="p-2 bg-info">Flex item 1</div>
+		<div class="p-2 bg-info">Flex item 1</div>
+   		<div class="p-2 bg-warning">Flex item 2</div>
+		<div class="p-2 bg-primary">Flex item 3</div>
+	</div>
+	<p> 5. around: 대충 간격을 두어서 나오게함  </p>
+	<div class="d-flex mt-3 justify-content-around bg-secondary mb-3">
+		<div class="p-2 bg-info">Flex item 1</div>
+		<div class="p-2 bg-info">Flex item 1</div>
+		<div class="p-2 bg-info">Flex item 1</div>
+   		<div class="p-2 bg-warning">Flex item 2</div>
+		<div class="p-2 bg-primary">Flex item 3</div>
+	</div>
+	<p> 동일한 크기의 영역을 가질수 있음  </p>
+	<div class="d-flex mb-3 mt-3">
+    	<div class="p-2 flex-fill bg-info">Flex item 1</div>
+    	<div class="p-2 flex-fill bg-warning">Flex item 2</div>
+    	<div class="p-2 flex-fill bg-primary">Flex item 3</div>
+    	<div class="p-2 flex-fill bg-primary">Flex item 3</div>
+    	<div class="p-2 flex-fill bg-primary">Flex item 3</div>
+  </div>
+  <p>flex-grow-1 : 남는 나머지 영역을 다 먹을수 있음  두군데 영역주면 두군데 나눠서 먹음</p>
+  <div class="d-flex mb-3 bg-dark">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning flex-grow-1 ">Flex item 2</div>
+    <div class="p-2 bg-primary flex-grow-1 ">Flex item 3</div>
+  </div>
+  <div class="d-flex mb-3 bg-secondary">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <p>order: (순서제어)시각적 효과로 1~12까지 번호를 줄수 있음 여기서는 order-3이면 3번째 div가 첫번째 div로 보이게끔 시각적 효과를 줌 </p>
+  <div class="d-flex mb-3">
+    <div class="p-2 order-3 bg-info">Flex item 1</div>
+    <div class="p-2 order-2 bg-warning">Flex item 2</div>
+    <div class="p-2 order-1 bg-primary">Flex item 3</div>
+  </div>
+  <p>flex-wrap:줄바꿈 제어 </p>
+  <div class="d-flex flex-wrap bg-warning mb-3">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+</div>
+
+</body>
+</html>

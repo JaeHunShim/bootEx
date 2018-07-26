@@ -51,11 +51,12 @@
   </div>
   </div>
 </div>
+
 <div class="container">
 	<div class="btn-group">
 		<button type="button" class="btn btn-outline-info">1번째</button>
   		<button type="button" class="btn btn-outline-warning">2번째</button>
-  		<div class="btn-group">
+  		<div class="btn-group"> <!-- 이부분은 그룹으로 안묶어도 상관없음-->
   		<!-- class안에  dropdown-toggle 넣으면  드랍다운인걸 표시해줌  data-toggle="dropdown"은 드랍다운버튼이란걸 알려주게됨 -->
   		<button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown">3번째</button>
   			<div class="dropdown-menu">
@@ -64,6 +65,30 @@
   			</div>
   		</div>
 	</div>
+</div>
+<div class="container-fluid">
+	<!-- 세로로 버튼 그룹  -->
+	<div class="btn-group-vertical">
+		<button type="button" class="btn btn-outline-primary">1번째</button>
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">2번째</button>
+		<div class="dropdown-menu">
+				<button type="button" class="dropdown-item btn-primary-outline"> 드랍다운 1</button>
+				<button type="button" class="dropdown-item"> 드랍다운 1</button>
+				<button type="button" class="dropdown-item"> 드랍다운 1</button>
+			</div>
+		<button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">3번째</button>
+			<div class="dropdown-menu">
+				<button type="button" class="dropdown-item btn-primary-outline"> 드랍다운 1</button>
+				<button type="button" class="dropdown-item"> 드랍다운 1</button>
+				<button type="button" class="dropdown-item"> 드랍다운 1</button>
+			</div>
+	</div>
+	<!-- Badges 꼬리표 같은 거임  -->
+	<h2> Badges</h2>
+	<span class="badge badge-primary">primary</span>
+	<span class="badge badge-info">info</span>
+	<span class="badge badge-warning">warning</span>
+	<span class="badge badge-dark">dark</span>
 </div>
 </body>
 </html>

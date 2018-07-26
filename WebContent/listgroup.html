@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	<div class="list-group">
+		<!--  기본 -->
+		<a href="#" class="list-group-item list-group-item-success">success</a>
+		<a href="#" class="list-group-item list-group-item-info">success</a>
+		<a href="#" class="list-group-item list-group-item-warning">success</a>
+		<!-- action onmouse대면 색깔 변경  outline은 해봤는데 안되네...-->
+		<a href="#" class="list-group-item list-group-item-action list-group-item-success">success</a>
+		<a href="#" class="list-group-item list-group-item-action list-group-item-info">success</a>
+		<a href="#" class="list-group-item list-group-item-action list-group-item-warning">success</a>
+	</div>
+</div>
+<!--  list안에 badge 넣기(글 조회수 증가시킬때 써먹으면 좋을듯) -->
+<!--  align-items-center: 센터 정렬  -->
+<div class="container mt-4">
+	<ul class="list-group">
+		<li class="list-group-item d-flex justify-content-between">으앙
+			<span class="badge badge-primary">1배지</span>
+			<span class="badge badge-primary">2배지</span>
+			<span class="badge badge-primary">3배지</span>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
