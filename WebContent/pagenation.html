@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	<p>페이징 처리 : active를 주면 활성화 disabled 를 주면 비활성화됨 </p>
+	<ul class="pagination">
+		<li class="page-item"><a class="page-link" href="#">Previours</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item active"><a class="page-link" href="#">2</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+	</ul>
+	<p>페이징 바 :paging-lg는  크게 sm은 작게 </p>
+	<ul class="pagination mt-3 pagination-sm">
+		<li class="page-item"><a class="page-link" href="#">Previours</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item active"><a class="page-link" href="#">2</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+	</ul>
+	<p><strong>페이지바 위치조정 : flex에서 사용했던 것처럼  justify-content를 사용해서</strong> </p>
+	<p>1. 기본 (왼쪽정렬)</p>
+	<ul class="pagination mt-3 pagination-sm">
+		<li class="page-item"><a class="page-link" href="#">Previours</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item active"><a class="page-link" href="#">2</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+	</ul>
+	<p>2. 가운데 정렬 center</p>
+	<ul class="pagination mt-3 justify-content-center">
+		<li class="page-item"><a class="page-link" href="#">Previours</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item active"><a class="page-link" href="#">2</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+	</ul>
+	<p>3. 오른쪽 정렬 end</p>
+	<ul class="pagination mt-3 pagination-sm justify-content-end">
+		<li class="page-item"><a class="page-link" href="#">Previours</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item active"><a class="page-link" href="#">2</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+	</ul>
+</div>
+</body>
+</html>
