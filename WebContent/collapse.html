@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>collapse</title>
+</head>
+<body>
+<p>접기 : data-togge에 collase를 주고 (dropdown은 data-target에 주면 dropdown 주면되었었지?) data-target엔 내가 열것을 해주면됨</p>
+<div class="container-fulid">
+	<button class="btn btn-info" data-toggle="collapse" data-target="#ex" >collase</button>
+</div>
+<div id=ex>
+	아무거나 넣어도 되네 테이블도 되겠다?
+	<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#ex1">버튼 collapse</button>
+</div>
+<div id="ex1">
+	이렇게 중첩도되네?
+</div>
+<p>2. a 태그에 id를 주어서 사용할수도 있음 </p>
+<div class="container-fulid">
+	<a href="#ex2" class="btn btn-outline-danger" data-toggle="collapse"> ex collapse</a>
+</div>
+<div id="ex2">
+	a태그에 넣어도 된다.
+</div>
+<p>3. accodion 사용하기 : 태이블형태에서 collapse를 사용할수 있음 
+header:내가 click할것들이 들어가는곳 
+href:보여질내용데 대한 매핑 (data-target을 해도 상관은 없음 )
+data-parent는 내가 속해있는 부모를 적어주면됨 
+class에 show를 추가하면 처음부터 보여주고 안붙이면 가려져 있는 상태로 나오게 된다. </p>
+<div class="container">
+	<div id="accodian">
+		<div class="card">
+			<div class="card-header">
+				<a class='card-link' data-toggle="collapse" href="#one">
+					첫번째 
+				</a>
+			</div>
+			<div id="one" class="collapse show" data-parent="#accodian">
+				<div class="card-body">
+					data-parent collapse 불러오게 된다. 
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#two">두번째</a>
+			</div>
+			<div id="two" class="collapse" data-parent="#accodian">
+				<div class="card-body">
+					두번째 내용입니다.
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" data-target="#three" >세번째</a>
+			</div>
+			<div id="three" class="collapse" data-parnet="#accodian">
+				<div class="card-body">
+					세번째 내용입니다.
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

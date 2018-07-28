@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>navbar</title>
+</head>
+<body>
+<p>간단한 가로 메뉴를 만들려면 .nav클래스에 ul요소 를 추가하고 그 다음에 .nav-item 각각 li을 추가하고 .nav-link해당 링크를 링크에 추가하십시오.
+알고 있겠지만 active를 주면 활성화 댐 
+nav에 dropdown을 넣어서 사용할수 있음 
+data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
+<div class="container-fulid">
+	<ul class="nav-pills">
+		<li class="nav-item">
+			<a class="nav-link" href="#" >첫번째 메뉴</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">세번째 메뉴</a>
+			<div class="dropdown-menu" id='ex'>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+			</div>
+		</li>
+	</ul>
+	<p>2. 네비바 정렬하기 :justify-content-   center, end, between 사용하면됨 </p>
+	<ul class="nav justify-content-center">
+		<li class="nav-item">
+			<a class="nav-link" href="#">첫번째 메뉴</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">세번째 메뉴</a>
+			<div class="dropdown-menu" id='ex'>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+			</div>
+		</li>
+	</ul>
+	<p>3. 탐색 메뉴를 .nav-tabs클래스 와 함께 탐색 탭으로 바꿉니다  
+		tabs와 pills를 같이 붙여서 먹일수도 있음  근데 메리트가 없음 </p>
+	<ul class="nav nav-pills nav-tabs justify-content-center">
+		<li class="nav-item">
+			<a class="nav-link" href="#">첫번째 메뉴1</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">세번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+			</div>
+		</li>
+	</ul>
+	<p>4.nav-justified:네이바 메뉴를 동일한 크기로 만들어줌 </p>
+	<ul class="nav nav-tabs nav-justified justify-content-center">
+		<li class="nav-item">
+			<a class="nav-link" href="#">첫번째 메뉴1</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+				<a class="dropdown-item">되나?</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">세번째 메뉴</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+				<a class="dropdown-item">되나</a>
+			</div>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
