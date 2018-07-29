@@ -3,21 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/bootStrap/css/bootstrap.min.css">
+<script src="/bootStrap/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="/bootStrap/js/bootstrap.min.js"></script>
 <title>navbar</title>
+<style>
+	/*toggle에 대한 css먹일라면 jquery로 처리 해야할듯  */
+	.nav-link.active{
+		background-color:orange;
+	}
+</style>
 </head>
 <body>
-<p>간단한 가로 메뉴를 만들려면 .nav클래스에 ul요소 를 추가하고 그 다음에 .nav-item 각각 li을 추가하고 .nav-link해당 링크를 링크에 추가하십시오.
+<p class="text-center">간단한 가로 메뉴를 만들려면 .nav클래스에 ul요소 를 추가하고 그 다음에 .nav-item 각각 li을 추가하고 .nav-link해당 링크를 링크에 추가하십시오.
 알고 있겠지만 active를 주면 활성화 댐 
 nav에 dropdown을 넣어서 사용할수 있음 
 data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
 <div class="container-fulid">
-	<ul class="nav-pills">
+	<ul class="nav nav-pills">
 		<li class="nav-item">
-			<a class="nav-link" href="#" >첫번째 메뉴</a>
+			<a class="nav-link active" href="#" >첫번째 메뉴</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째 메뉴</a>
@@ -36,7 +42,7 @@ data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
 			</div>
 		</li>
 	</ul>
-	<p>2. 네비바 정렬하기 :justify-content-   center, end, between 사용하면됨 </p>
+	<p class="text-center">2. 네비바 정렬하기 :justify-content-   center, end, between 사용하면됨 </p>
 	<ul class="nav justify-content-center">
 		<li class="nav-item">
 			<a class="nav-link" href="#">첫번째 메뉴</a>
@@ -58,7 +64,7 @@ data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
 			</div>
 		</li>
 	</ul>
-	<p>3. 탐색 메뉴를 .nav-tabs클래스 와 함께 탐색 탭으로 바꿉니다  
+	<p class="text-center">3. 탐색 메뉴를 .nav-tabs클래스 와 함께 탐색 탭으로 바꿉니다  
 		tabs와 pills를 같이 붙여서 먹일수도 있음  근데 메리트가 없음 </p>
 	<ul class="nav nav-pills nav-tabs justify-content-center">
 		<li class="nav-item">
@@ -81,7 +87,7 @@ data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
 			</div>
 		</li>
 	</ul>
-	<p>4.nav-justified:네이바 메뉴를 동일한 크기로 만들어줌 </p>
+	<p class="text-center">4.nav-justified:네이바 메뉴를 동일한 크기로 만들어줌 </p>
 	<ul class="nav nav-tabs nav-justified justify-content-center">
 		<li class="nav-item">
 			<a class="nav-link" href="#">첫번째 메뉴1</a>
@@ -103,6 +109,57 @@ data-target으로 dropdown-menu를 가지고 올순 없네용?~</p>
 			</div>
 		</li>
 	</ul>
+	<p class="text-center">5. toggle/dynamic tabs(토글로 동적인 탭만들기 ) : data-toggle에 tab 을 주면됨 data toggle에 dropdown에 tab을 같이 줄수 없네? 
+		href에 내가 매핑시킬 id값 주면 됨 
+		보여질 내용이 있는 div에 container tab-pane 를 넣어주어야 제대로 작동됨  fade는 효과임 </p>
+	<ul class="nav nav-tabs justify-content-center">
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#first">첫번째</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#second">두번째</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#third">세번째</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div id="first" class="container tab-pane fade">
+			<h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</div>
+		<div id="third" class="container tab-pane fade">
+			<p>세번째 내용입니다.</p>
+		</div>
+		<div id="second" class="container tab-pane fade">
+			<h3>두번째 내용입니다. 메핑 id에 따라서 나옵니다.</h3>
+		</div>
+	</div>
+	<p class="text-center"> 6. pills toggle : tabs 랑 사용방법은 같음  data-toggle 에 pill을 넣어주면됨</p>
+	<ul class="nav nav-pills justify-content-center" >
+		<li class='nav-item'>
+			<a class="nav-link" data-toggle="pill" href="#a">첫번째</a>
+		</li>
+		<li class='nav-item'>
+			<a class="nav-link" data-toggle="pill" href="#b">두번째</a>
+		</li>
+		<li class='nav-item'>
+			<a class="nav-link" data-toggle="pill" href="#c">세번째</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		 class="tab-content">
+		<div id="a" class="container tab-pane fade">
+			<h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</div>
+		<div id="b" class="container tab-pane fade">
+			<p>세번째 내용입니다.</p>
+		</div>
+		<div id="c" class="container tab-pane fade">
+			<h3>두번째 내용입니다. 메핑 id에 따라서 나옵니다.</h3>
+		</div>
+	</div>
 </div>
 </body>
 </html>
