@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container-fulid">
+	<!-- navbar-fiexed-top 사용 -->
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-top">
+		<!-- img로 브랜드함 -->
+		<a class="navbar-brand" href="#">
+			<img class="rounded-circle" src="/bootStrap/img/tour01.jpg" alt="brand" style="width:50px; height:50px;">
+		</a>
+		<!-- 반응형으로 icon만드는 부분  -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- navbar메뉴들  여기에 icon에 data-target id를 줌 -->
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link">첫번째</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">두번째</a>
+					<div class="dropdown-menu">
+						<a href="#" class="dropdown-item">집에</a>
+						<a href="#" class="dropdown-item">가고</a>
+						<a href="#" class="dropdown-item">싶어</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">세번째</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">네번째</a>
+				</li>
+			</ul>
+			<!-- 검색 창 만듬 -->
+			<div class="form-inline ml-auto">
+				<input class="form-control mr-sm-2" type="text" placeholder="search">
+				<a class="btn btn-success" href="#">검색</a>
+			</div>
+		</div>
+	</nav>
+</div>
+<p class="text-center"> 1. form-group: 넣고 싶은 input, textarea나 넣어주면된다. label에는 for="eamil or name ...."
+form-check-input 으로 checkbox 버튼을 만들어서 처리 할수 있음 </p>
+<div class="container">
+	<form action="#">
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<input class="form-control" type="text" placeholder="Name" name="email">
+		</div>
+		<div class="form-group">
+			<label class="password">Password;</label>
+			<input type="password" class="form-control" placeholder="Password" name="password">
+		</div>
+		<!-- form check 버튼 -->
+		<div class="form-group form-check">
+			<label class="form-check-label">
+				<input class="form-check-input" type="checkbox" name='remember'>Remember
+			</label>
+		</div>
+		<div class="form-group d-flex justify-content-end">
+			<button type="submit" class="btn btn-outline-success">Submit</button>
+		</div>
+	</form>
+</div>
+
+<p class="text-center"> 2. form-inline을 주면 가로로 줄지어서 나오는데 이건 576px까지만 적용되고 그 이하는 아래로 내려가게된다.</p>
+<div class="container">
+	<form class="form-inline" action="#">
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<input class="form-control" type="text" placeholder="Name" name="email">
+		</div>
+		<div class="form-group">
+			<label class="password">Password;</label>
+			<input type="password" class="form-control" placeholder="Password" name="password">
+		</div>
+		<!-- form check 버튼 -->
+		<div class="form-group form-check">
+			<label class="form-check-label">
+				<input class="form-check-input" type="checkbox" name='remember'>Remember
+			</label>
+		</div>
+		<div class="form-group d-flex justify-content-end">
+			<button type="submit" class="btn btn-outline-success">Submit</button>
+		</div>
+	</form>
+</div>
+</body>
+</html>
