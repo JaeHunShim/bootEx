@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/bootStrap/css/bootstrap.min.css">
+<script src="/bootStrap/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="/bootStrap/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<script>
+// 각 테이블을 순회하면서 일치하는 값으로 필터링 한다. (개좋네 ㄷㄷㄷㄷ)
+	$(document).ready(function(){
+		$('#myInput').on('keyup',function(){
+			var val = $(this).val().toLowerCase();
+			$('#myTable tr').filter(function(){
+				$(this).toggle($(this).text().toLowerCase().indexOf(val)>-1)
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<div class="container">
+	<h2>Filterable Table</h2>
+  <p>Type something in the input field to search the table for first names, last names or emails:</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@mail.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@greatstuff.com</td>
+      </tr>
+      <tr>
+        <td>Anja</td>
+        <td>Ravendale</td>
+        <td>a_r@test.com</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+</div>
+
+</body>
+</html>
