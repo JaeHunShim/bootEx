@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/bootStrap/css/bootstrap.min.css">
+<script src="/bootStrap/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="/bootStrap/js/bootstrap.min.js"></script>
+<title>부트스트랩에서 지원하는 이쁜 form들 </title>
+</head>
+<body>
+<div class="container-fulid">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<a class="nav-brand">
+			<img class="rounded-circle" src="/bootStrap/img/tour01.jpg" alt="brand" style="width:50px; height:50px;">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="menu">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">첫번째</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">1</a>
+					<a class="dropdown-item" href="#">2</a>
+					<a class="dropdown-item" href="#">3</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">두번째</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">세번째</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">1</a>
+					<a class="dropdown-item" href="#">2</a>
+					<a class="dropdown-item" href="#">3</a>
+				</div>
+			</li>
+		</ul>
+		<div class="form-inline ml-auto">
+			<div class="input-group">
+				<input class="form-control" type="text" placeholder="Search">
+				<div class="input-group-append">
+					<button class="btn btn-primary" type='submit'>Submit</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</nav>
+</div>
+<p style="margin:30px;">1. custom-checkbox , custom -radio : 그냥 별거 없음 이뿌게 보이게 하는거말고는
+label의 for와 input의 id value 값이 동일해야 텍스틀 클릭해도 checkbox가 체크됨 <br>
+select : select에  class로  costom-select를 주고  기본이랑 똑같이 사용하면 됨 </p>
+<div class="container-fulid">
+	<form action="#">
+		<div class="form-check-inline">
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="customCheck">
+				<label class="custom-control-label" for="customCheck">Custom checkbox
+				</label>
+			</div>
+			<div class="ml-3">
+				<label class="form-check-label" for="check2">
+					<input type="checkbox" class="form-check-input" id="check2">Default
+				</label>
+			</div>
+		</div>
+		<div class="form-check-inline">
+			<div class="custom-control custom-radio ml-3">
+					<input type="radio" class="custom-control-input" id="radioCheck">
+					<label for="radioCheck" class="custom-control-label">Custom radio</label>
+			</div>
+			<div class="ml-3">
+				<label class="form-check-label" for="check3">
+					<input type="radio" class="form-check-input" id="check3">Default
+				</label>
+			</div>
+		</div><br>
+		<button type="submit" class="btn btn-success">Submit</button>
+		<p class="mt-2">Costom</p>
+		<select class="custom-select mt-3 ">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+		</select>
+		<p class="mt-2">Default</p>
+		<select>
+			<option selected>으아아아아안</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+		</select>
+	</form>
+</div>
+</body>
+</html>
