@@ -2,24 +2,23 @@ package user;
 
 public class User {
 	
-	String userName;
-	int userAge;
+	String userChar;
+	String userID;
 	String userGender;
-	String userEamil;
+	String userEmail;
 	
 	
-	
-	public String getUserName() {
-		return userName;
+	public String getUserChar() {
+		return userChar;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserChar(String userChar) {
+		this.userChar = userChar;
 	}
-	public int getUserAge() {
-		return userAge;
+	public String getUserID() {
+		return userID;
 	}
-	public void setUserAge(int userAge) {
-		this.userAge = userAge;
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 	public String getUserGender() {
 		return userGender;
@@ -27,11 +26,11 @@ public class User {
 	public void setUserGender(String userGender) {
 		this.userGender = userGender;
 	}
-	public String getUserEamil() {
-		return userEamil;
+	public String getUserEmail() {
+		return userEmail;
 	}
-	public void setUserEamil(String userEamil) {
-		this.userEamil = userEamil;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 	
 	
