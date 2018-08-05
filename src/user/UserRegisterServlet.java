@@ -21,7 +21,6 @@ public class UserRegisterServlet extends HttpServlet {
 		String userID = request.getParameter("userID");
 		String userGender = request.getParameter("userGender");
 		String userEmail = request.getParameter("userEmail");
-		
 		System.out.println("아이디정보:" + userID);
 		response.getWriter().write(register(userChar, userID, userGender, userEmail) +"");
 	}
