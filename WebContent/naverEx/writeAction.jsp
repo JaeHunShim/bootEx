@@ -16,8 +16,10 @@
 <body>
 <% 
 String userID = null;
+String userChar = null;
 if(session.getAttribute("userID") !=null){
 	userID = (String) session.getAttribute("userID");
+	userChar = (String) session.getAttribute("userChar");
 }
 if(userID == null){
 	PrintWriter script = response.getWriter();
@@ -37,7 +39,7 @@ script.println("</script>");
 	}
 else {
 	BbsDAO bbsDAO = new BbsDAO();
-	int result = bbsDAO.write(bbs.getBbsTitle(), bbs.getUserChar(), userID, bbs.getBbsContent());
+	int result = bbsDAO.write(bbs.getBbsTitle(), userChar, userID, bbs.getBbsContent());
 	if(result == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");

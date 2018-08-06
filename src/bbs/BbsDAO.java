@@ -62,8 +62,8 @@ public class BbsDAO {
 		pstmt.setInt(1, getNext());
 		pstmt.setString(2, bbsTitle);
 		pstmt.setString(3, userChar);
-		pstmt.setString(4, userID);
-		pstmt.setString(5, getDate());
+		pstmt.setString(4, getDate());
+		pstmt.setString(5, userID);
 		pstmt.setString(6, bbsContent);
 		pstmt.setInt(7, 1);
 		return pstmt.executeUpdate();

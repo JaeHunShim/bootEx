@@ -26,6 +26,7 @@ public class UserRegisterServlet extends HttpServlet {
 	}
 public int register(String userChar,String userID,String userGender,String userEmail) {
 User user = new User();
+UserDAO userDAO = new UserDAO();
 try {
 	user.setUserChar(userChar);
 	user.setUserID(userID);
@@ -33,6 +34,6 @@ try {
 	user.setUserEmail(userEmail);
 }catch(Exception e)
 {return 0;}
-return new UserDAO().register(user);
+ return 0;
 }
 }

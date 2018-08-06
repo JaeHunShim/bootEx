@@ -2,10 +2,12 @@ package user;
 
 public class User {
 	
-	String userChar;
-	String userID;
-	String userGender;
-	String userEmail;
+	private String userChar;
+	private String userID;
+	private String userPassword;
+	private String userPassword2;
+	private String userGender;
+	private String userEmail;
 	
 	
 	public String getUserChar() {
@@ -19,6 +21,18 @@ public class User {
 	}
 	public void setUserID(String userID) {
 		this.userID = userID;
+	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+	public String getUserPassword2() {
+		return userPassword2;
+	}
+	public void setUserPassword2(String userPassword2) {
+		this.userPassword2 = userPassword2;
 	}
 	public String getUserGender() {
 		return userGender;

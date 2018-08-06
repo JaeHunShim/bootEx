@@ -26,13 +26,13 @@ response.getWriter().write(getJSON(userChar));
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
 		UserDAO userDAO = new UserDAO();
-		ArrayList<User> userList = userDAO.search(userChar);
-		for(int i = 0; i<userList.size(); i++) {
+		/*ArrayList<User> userList = userDAO.search(userChar);*/
+		/*for(int i = 0; i<userList.size(); i++) {
 			result.append("[{\"value\": \"" + userList.get(i).getUserChar() + "\"},");
 			result.append("{\"value\": \"" + userList.get(i).getUserID() + "\"},");
 			result.append("{\"value\": \"" + userList.get(i).getUserGender() + "\"},");
 			result.append("{\"value\": \"" + userList.get(i).getUserEmail() + "\"}],");
-		}
+		}*/
 		result.append("]}");
 		return result.toString();
 	}
