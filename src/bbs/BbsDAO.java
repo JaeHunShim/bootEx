@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BbsDAO {
 	private Connection conn;//데이터 베이스에 접근하게함.
 	private ResultSet rs;//
-
+	private PreparedStatement pstmt;
 
 
 	public BbsDAO() {
@@ -23,6 +24,39 @@ public class BbsDAO {
 			e.printStackTrace();//오류를 잡아냄
 		}
 
+	}
+	public ArrayList<Bbs> search(String bbsContent){
+		   String SQL = "SELECT * FROM BBS WHERE bbsID LIKE ? or bbsTitle like ? or userChar like ? or bbsDate like ?";
+		  ArrayList<Bbs> bbsList = new ArrayList<Bbs>();
+		  try {
+			  pstmt = conn.prepareStatement(SQL);
+		   
+		   pstmt.setString(1, "%"+bbsContent+"%");
+		   pstmt.setString(2, "%"+bbsContent+"%");
+		   pstmt.setString(3, "%"+bbsContent+"%");
+		   pstmt.setString(4, "%"+bbsContent+"%");
+		   rs = pstmt.executeQuery();
+		   while(rs.next()) {
+		   Bbs bbs = new Bbs();
+		   bbs.setBbsID(rs.getInt(1));
+		   bbs.setBbsTitle(rs.getString(2));
+		   bbs.setUserChar(rs.getString(3));
+		   bbs.setBbsDate(rs.getString(4));
+
+		   bbsList.add(bbs);
+		   }
+		  }
+		  catch(Exception e) {
+		   e.printStackTrace();
+		  }
+		  finally {if(rs!= null) {try{rs.close();}catch(SQLException se) {}
+		  }
+		  if(pstmt != null) {try{pstmt.close();}catch(SQLException se) {}
+		  }
+		  if(conn != null) {try{conn.close();}catch(SQLException se) {}
+		  }
+		  }
+		  return bbsList;
 	}
 
 	public String getDate() {
@@ -126,10 +160,11 @@ public class BbsDAO {
 					Bbs bbs = new Bbs();
 					bbs.setBbsID(rs.getInt(1));
 					bbs.setBbsTitle(rs.getString(2));
-					bbs.setUserID(rs.getString(3));
+					bbs.setUserChar(rs.getString(3));
 					bbs.setBbsDate(rs.getString(4));
-					bbs.setBbsContent(rs.getString(5));
-					bbs.setBbsAvailable(rs.getInt(6));
+					bbs.setUserID(rs.getString(5));
+					bbs.setBbsContent(rs.getString(6));
+					bbs.setBbsAvailable(rs.getInt(7));
 					return bbs;
 				}
 			}catch(Exception e) {
@@ -166,4 +201,6 @@ public class BbsDAO {
 			return -1;
 			
 		}
+		
+		
 }

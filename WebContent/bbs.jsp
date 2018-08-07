@@ -13,23 +13,49 @@
 <script src="/bootStrap/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="/bootStrap/js/bootstrap.min.js"></script>
-<title>JSP 계시판 웹사이트</title>
-<style type = "text/css">
+<script type = "text/javascript">
+var searchRequest = new XMLHttpRequest();
+function searchFunction(){
+ searchRequest.open("post" , "./BbsSearchServlet?bbsContent=" +encodeURIComponent(document.getElementById("bbsContent").value),true);
+ searchRequest.onreadystatechange = searchProcess;
+ searchRequest.send(null);
+}
+function searchProcess(){
+ var table = document.getElementById("ajaxTable");
+ table.innerHTML = "";
+ if(searchRequest.readyState == 4 && searchRequest.status == 200){
+  var object = eval('(' + searchRequest.responseText +')');
+var result = object.result;
+for(var i =0; i< result.length; i++){
+ var row = table.insertRow(0);
+ for(var j = 0; j < result[i].length; j++){
+  var cell = row.insertCell(j);
+  cell.innerHTML = result[i][j].value;
+}
+}
+}
+}
+window.onload = function(){
+searchFunction();  
+ }
+ </script>
+ <style type = "text/css">
 a, a:hover{
 color: #000000;
 text-decoration : none;
 }
 </style>
 </head>
+
 <body>
 <%
 String userID = null;
 if (session.getAttribute("userID") !=null){
-	userID = (String) session.getAttribute("userID");
+ userID = (String) session.getAttribute("userID");
 }
 int pageNumber = 1;
 if (request.getParameter("PageNumber") != null){
-	pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+ pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 }
 %>
 <nav class="navbar navbar-defoult">
@@ -53,35 +79,43 @@ if(userID == null){
 
 %>
 <ul class= "nav navbar-nav navbar-right">
-	<li class="dropdown"> 
-	<a href="#" class="dropdown-toggle"
-	data-toggle="dropdown"role="button" aria-haspopup="true"
-	aria-exparded="false">접속하기<span class="caret"></span></a>
-	<ul class = "dropdown-menu">
-	<li><a href="login.jsp">로그인</a></li>
-	<li><a href="join.jsp">회원가입</a></li>
-	</ul>
-	</li>
-	</ul>
-	<%
-        	} else {
-	%>
+ <li class="dropdown">
+ <a href="#" class="dropdown-toggle"
+ data-toggle="dropdown"role="button" aria-haspopup="true"
+ aria-exparded="false">접속하기<span class="caret"></span></a>
+ <ul class = "dropdown-menu">
+ <li><a href="login.jsp">로그인</a></li>
+ <li><a href="join.jsp">회원가입</a></li>
+ </ul>
+ </li>
+ </ul>
+ <%
+         } else {
+ %>
 <ul class= "nav navbar-nav navbar-right">
-	<li class="dropdown">
-	<a href="#" class="dropdown-toggle"
-	data-toggle="dropdown"role="button" aria-haspopup="true"
-	aria-exparded="false">회원관리<span class="caret"></span></a>
-	<ul class = "dropdown-menu">
-	<li><a href="logoutAction.jsp">로그아웃</a></li>
-	</ul>
-	</li>
-	</ul>
-	<%
-	}
-	%>
+ <li class="dropdown">
+ <a href="#" class="dropdown-toggle"
+ data-toggle="dropdown"role="button" aria-haspopup="true"
+ aria-exparded="false">회원관리<span class="caret"></span></a>
+ <ul class = "dropdown-menu">
+ <li><a href="logoutAction.jsp">로그아웃</a></li>
+ </ul>
+ </li>
+ </ul>
+ <%
+ }
+ %>
 </div>
 </nav>
-<div class="container">
+<div class = "container">
+<div class= "form-group row pull-right">
+<div class= "col-xs-8">
+<input class= "form-control" id = "bbsContent" onkeyup="searchFunction()" type="text" size = "20">
+</div>
+<div class= "col-xs-2">
+<button class = "btn btn-primary" onclick="searchFunction();"type= "button">검색</button>
+</div>
+</div>
 <div class= "row">
 <table class = "table table -striped" style= "text-align: center; border: 1px solid #dddddd">
 <thead>
@@ -92,31 +126,14 @@ if(userID == null){
 <th style = "backgred-color: #aaaaaa; text-align: center;">작성일</th>
 </tr>
 </thead>
+<tbody id= "ajaxTable">
+</tbody>
 <tbody>
 <%
 BbsDAO bbsDAO = new BbsDAO();
-ArrayList<Bbs> list= bbsDAO.getList(pageNumber);
-for(int i = 0; i< list.size(); i++)
-{
-	%>
-	<tr>
-	<td><%= list.get(i).getBbsID()%></td>
-	<td><a href = "view.jsp?bbsID=<%= list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll("","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt").replaceAll("\n","<br>") %></a></td>
-	<td><%= list.get(i).getUserChar()%></td>
-	<td><%= list.get(i).getBbsDate().substring(0,11)+list.get(i).getBbsDate().substring(11,13) + "시" + list.get(i).getBbsDate().substring(14,16) + "분"%></td>
-	</tr>
-	<%
-	}
 %>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
 </table>
+
 <%
 if(pageNumber != 1){
 %>
@@ -134,7 +151,5 @@ if(pageNumber != 1){
 </div>
 </div>
 
-<script src = "http://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
 </body>
 </html>
